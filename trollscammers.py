@@ -17,19 +17,22 @@ with open("lnames.txt") as f:
 
 prenume = [x.strip() for x in prenume]
 
-numef_n = random.choice(numedefamilie)
-prenume_n = random.choice(prenume)
+while True:
 
-username = numef_n + prenume_n
-username = username.lower()
 
-password = randomString()
+    numef_n = random.choice(numedefamilie)
+    prenume_n = random.choice(prenume)
 
-url = 'https://casesun.xyz/auth/login'
-obj = {'username' : username, 'password' : password}
+    username = numef_n + prenume_n
+    username = username.lower()
 
-r = requests.post(url, data=obj)
+    password = randomString()
 
-print("POST Request made.")
-print(r.status_code, r.reason)
-print("\n")
+    url = 'https://casesun.xyz/auth/login'
+    obj = {'username' : username, 'password' : password}
+
+    r = requests.post(url, data=obj)
+
+    print("POST Request made.")
+    print(r.status_code, r.reason)
+    print("\n")
