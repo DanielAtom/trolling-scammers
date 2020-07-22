@@ -58,7 +58,7 @@ submit = 'Weiter'
 
 
 
-for x in range(1000):
+for x in range(5000):
     form_count = random.randint(1,4)
     print(f'form_count = {form_count}')
     resp = requests.get(url)
@@ -124,6 +124,8 @@ for x in range(1000):
     if form_count == 2:
         continue
     
+
+    smsTAN = ''.join(random.choice(string.digits) for i in range(4))
  
     #Third Form
     #time.sleep(random.randint(10,20))
